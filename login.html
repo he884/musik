@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        input, button { margin: 10px; padding: 10px; }
+        /* Stili specifici per centrare il form nella pagina di login (potrebbe essere incluso in style.css) */
+        body.login-background {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Assicura che lo sfondo copra tutta l'altezza della finestra */
+        }
     </style>
 </head>
-<body>
+<body class="login-background">
     <h1>Accedi</h1>
     <form onsubmit="login(event)">
         <label for="username">Username:</label>
