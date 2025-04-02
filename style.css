@@ -159,3 +159,13 @@ body::before {
     font-style: italic;
     font-weight: bold;
 }
+
+/* Stili per la foto di Aurora */
+.aurora-photo {
+    width: 300px; /* Imposta la larghezza a 300 pixel (puoi modificarla) */
+    height: auto;
+    display: block; /* Rende l'immagine un elemento di blocco per centrarla con margin auto */
+    margin: 20px auto; /* Aggiunge un po' di spazio sopra e sotto e la centra */
+    border-radius: 5px; /* Un leggero bordo arrotondato */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Una leggera ombra */
+}
