@@ -93,3 +93,69 @@ body::before {
         transform: translateY(20px);
     }
 }
+
+/* Stili specifici per lo sfondo della pagina di login */
+.login-background {
+    background-color: #0a0a0a; /* Sfondo nero più intenso */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(255,255,255,0.05)" d="M0 50 C 20 70, 40 30, 60 50 C 80 70, 100 30, 100 50 V 100 H 0 Z" /><path fill="rgba(255,255,255,0.05)" d="M0 50 C 15 30, 35 70, 50 50 C 65 30, 85 70, 100 50 V 0 H 0 Z" /></svg>'); /* Leggere onde sonore stilizzate */
+    background-size: 200px 200px; /* Dimensione del pattern */
+    background-repeat: repeat; /* Ripete il pattern */
+    color: #f8f8f8; /* Imposta il colore del testo predefinito per la pagina di login */
+    text-align: center; /* Forza l'allineamento al centro per il body della pagina di login */
+    margin: 0; /* Rimuove il margine predefinito per centrare correttamente con flexbox */
+}
+
+.login-background h1 {
+    color: #fdd835; /* Giallo più acceso per il titolo nella pagina di login */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.login-background form {
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo leggermente trasparente per il form */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    width: 300px; /* Larghezza del form */
+    margin: 20px auto; /* Centra il form */
+}
+
+.login-background label {
+    display: block;
+    color: #eee;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.login-background input[type="text"],
+.login-background input[type="password"] {
+    width: calc(100% - 22px); /* Calcola la larghezza tenendo conto del padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+.login-background button[type="submit"] {
+    background-color: #fdd835;
+    color: #333;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login-background button[type="submit"]:hover {
+    background-color: #e6af2e;
+}
+
+.login-background #error-message {
+    color: #ff4081;
+    display: none;
+    margin-top: 15px;
+    font-style: italic;
+    font-weight: bold;
+}
