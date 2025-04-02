@@ -169,3 +169,13 @@ body::before {
     border-radius: 5px; /* Un leggero bordo arrotondato */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Una leggera ombra */
 }
+
+/* Stili per la foto di Claudia */
+.claudia-photo {
+    width: 250px; /* Imposta la larghezza a 250 pixel (puoi modificarla) */
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
