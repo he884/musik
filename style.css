@@ -179,3 +179,11 @@ body::before {
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+.renza-photo {
+    width: 250px; /* Imposta la larghezza desiderata per la foto di Renza */
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
