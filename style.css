@@ -1,0 +1,95 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif; /* Font generico sans-serif */
+    background-color: #181818; /* Sfondo nero per far risaltare i colori */
+    color: #f8f8f8;
+    text-align: center;
+    margin: 50px;
+    overflow-x: hidden; /* Nasconde la scrollbar orizzontale se le onde si estendono */
+}
+
+h1 {
+    color: #ff6f61; /* Un colore acceso come il corallo */
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+ul {
+    list-style-type: none;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05); /* Sfondo semitrasparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+ul li {
+    margin: 15px 0;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+ul li a {
+    color: #6aedc8; /* Un verde acqua brillante */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+ul li a:hover {
+    color: #fdd835; /* Un giallo vivace */
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #e65100; /* Un arancione scuro */
+    transform: scale(1.05); /* Leggero effetto di ingrandimento al passaggio del mouse */
+}
+
+#error-message {
+    color: #ff4081; /* Un rosa acceso */
+    display: none;
+    margin-top: 15px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Effetto "onda sonora" sullo sfondo (semplificato) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(106, 237, 200, 0.1) 20%, transparent 40%, transparent 60%, rgba(255, 111, 97, 0.1) 80%);
+    z-index: -1; /* Mantiene l'effetto sullo sfondo */
+    pointer-events: none; /* Permette di interagire con gli elementi sottostanti */
+    animation: waveAnimation 5s infinite alternate; /* Anima l'effetto */
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
