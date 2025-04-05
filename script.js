@@ -1,7 +1,7 @@
 // script.js - Gestisce il login e la protezione delle pagine
 
 // Simulazione di credenziali valide
-const CREDENTIALS = { username: "admin", password: "password" };
+const CREDENTIALS = { username: "imeio", password: "5r6ti7u" };
 
 // Funzione di login
 function login(event) {
