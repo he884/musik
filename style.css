@@ -1,117 +1,163 @@
+/* style.css */
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-image: url('https://images.unsplash.com/photo-1612277797214-f4256f782cb2?auto=format&fit=crop&w=1950&q=80');
-  background-size: cover;
-  background-position: center;
-  backdrop-filter: blur(4px);
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
+    font-family: Arial, sans-serif; /* Font generico sans-serif */
+    background-color: #181818; /* Sfondo nero per far risaltare i colori */
+    color: #f8f8f8;
+    text-align: center;
+    margin: 50px;
+    overflow-x: hidden; /* Nasconde la scrollbar orizzontale se le onde si estendono */
 }
 
 h1 {
-  margin-bottom: 10px;
-  font-size: 2.5rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    color: #ff6f61; /* Un colore acceso come il corallo */
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
-#datetime {
-  font-size: 1rem;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+ul {
+    list-style-type: none;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05); /* Sfondo semitrasparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
 }
 
-form {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+ul li {
+    margin: 15px 0;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-input {
-  padding: 10px;
-  margin: 10px;
-  width: 200px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+ul li:last-child {
+    border-bottom: none;
+}
+
+ul li a {
+    color: #6aedc8; /* Un verde acqua brillante */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+ul li a:hover {
+    color: #fdd835; /* Un giallo vivace */
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 button:hover {
-  background-color: #45a049;
+    background-color: #e65100; /* Un arancione scuro */
+    transform: scale(1.05); /* Leggero effetto di ingrandimento al passaggio del mouse */
+}
+
+#error-message {
+    color: #ff4081; /* Un rosa acceso */
+    display: none;
+    margin-top: 15px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Effetto "onda sonora" sullo sfondo (semplificato) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(106, 237, 200, 0.1) 20%, transparent 40%, transparent 60%, rgba(255, 111, 97, 0.1) 80%);
+    z-index: -1; /* Mantiene l'effetto sullo sfondo */
+    pointer-events: none; /* Permette di interagire con gli elementi sottostanti */
+    animation: waveAnimation 5s infinite alternate; /* Anima l'effetto */
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
 }
 
 /* Stili specifici per lo sfondo della pagina di login */
-
 .login-background {
-    background-color: #121212; /* Sfondo nero più profondo */
-    background-image: linear-gradient(90deg,
-        #4CAF50 10%, transparent 10%,
-        transparent 30%, #f44336 30%,
-        transparent 50%, transparent 70%,
-        #2196F3 70%, transparent 90%);
-    background-size: 50px 100%;
-    animation: equalizer 2s infinite alternate;
-}
-
-@keyframes equalizer {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 100% 0;
-    }
+    background-color: #0a0a0a; /* Sfondo nero più intenso */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(255,255,255,0.05)" d="M0 50 C 20 70, 40 30, 60 50 C 80 70, 100 30, 100 50 V 100 H 0 Z" /><path fill="rgba(255,255,255,0.05)" d="M0 50 C 15 30, 35 70, 50 50 C 65 30, 85 70, 100 50 V 0 H 0 Z" /></svg>'); /* Leggere onde sonore stilizzate */
+    background-size: 200px 200px; /* Dimensione del pattern */
+    background-repeat: repeat; /* Ripete il pattern */
+    color: #f8f8f8; /* Imposta il colore del testo predefinito per la pagina di login */
+    text-align: center; /* Forza l'allineamento al centro per il body della pagina di login */
+    margin: 0; /* Rimuove il margine predefinito per centrare correttamente con flexbox */
 }
 
 .login-background h1 {
-    color: #fff; /* Titolo bianco per contrasto */
+    color: #fdd835; /* Giallo più acceso per il titolo nella pagina di login */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .login-background form {
-    background-color: rgba(0, 0, 0, 0.7); /* Sfondo del form più opaco */
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo leggermente trasparente per il form */
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-    width: 300px;
-    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    width: 300px; /* Larghezza del form */
+    margin: 20px auto; /* Centra il form */
 }
 
 .login-background label {
+    display: block;
     color: #eee;
+    margin-bottom: 5px;
+    text-align: left;
 }
 
 .login-background input[type="text"],
 .login-background input[type="password"] {
-    background-color: #333;
+    width: calc(100% - 22px); /* Calcola la larghezza tenendo conto del padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
     color: #fff;
 }
 
 .login-background button[type="submit"] {
-    background-color: #4CAF50; /* Pulsante verde */
-    color: white;
+    background-color: #fdd835;
+    color: #333;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .login-background button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #e6af2e;
 }
 
 .login-background #error-message {
-    color: #ffeb3b; /* Messaggio di errore giallo */
+    color: #ff4081;
+    display: none;
+    margin-top: 15px;
+    font-style: italic;
+    font-weight: bold;
 }
 
 /* Stili per la foto di Aurora */
