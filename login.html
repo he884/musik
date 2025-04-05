@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* Stili specifici per centrare il form nella pagina di login (potrebbe essere incluso in style.css) */
-        body.login-background {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; /* Assicura che lo sfondo copra tutta l'altezza della finestra */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+        #datetime {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 30px;
         }
     </style>
 </head>
-<body class="login-background">
+<body>
     <h1>Accedi</h1>
+    <div id="datetime"></div>
+
     <form onsubmit="login(event)">
         <label for="username">Username:</label>
-        <input type="text" id="username" required>
+        <input type="text" id="username" required><br>
 
         <label for="password">Password:</label>
-        <input type="password" id="password" required>
+        <input type="password" id="password" required><br>
 
         <button type="submit">Login</button>
     </form>
@@ -41,6 +49,23 @@
                 document.getElementById("error-message").style.display = "block";
             }
         }
+
+        function updateDateTime() {
+            const now = new Date();
+            const dateTimeString = now.toLocaleString("it-IT", {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById("datetime").textContent = dateTimeString;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
     </script>
 </body>
 </html>
